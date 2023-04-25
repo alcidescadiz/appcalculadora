@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=hello, initial-scale=1.0">
+    <title>Ribs Calculadora</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .titulo {
+            background-color: black;
+            color: aliceblue;
+            text-align: center;
+            font-size: 20px;
+            padding: 30;
+            
+        }
+        .total, .totalbs {
+            text-align: center;
+            margin: auto;
+        }
+        .totalbs {
+            color: darkblue;
+        }
+        .limpiar {
+            text-align: center;
+            margin: 15;
+        }
+        .btn {
+            border: 2px solid black;
+            background-color: white;
+            color: black;
+            padding: 3px 14px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 2px;
+        }
+        .success {
+            border-color: #04AA6D;
+            color: green;
+        }
+        .mas {
+            background-color: dodgerblue;
+            border-color: blue;
+            color:blue;
+        }
+        .menos {
+            background-color: lightcoral;
+            border-color: brown;
+            color:brown;
+        }
+        ul {
+            padding: 25px;
+            background-color: black;
+            color: bisque;
+        }
+        .divtable .listado {
+            justify-content: center;
+            text-align: center;
+            margin: auto;
+            padding-top: 135px;
+        }
+
+        .fijo {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: antiquewhite;
+           
+        }
+        .amarillo {
+            background-color: gold;
+        }
+        #apagar {
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="fijo">
+        <div class="titulo">App Express Burger Ribs</div>
+        <div class="total">Total a pagar: <span id="apagar">0.00</span> $ </div>
+        <div class="totalbs"> <span id="bolivares">0.00</span> <span>Bs</span></div>
+        <div class="limpiar"><button class="btn success" id="limpiar"> Nueva compra</button></div>
+        <div class="titulo">Lista de productos:</div>
+    </div>
+    <div class="divtable">
+        <table class="listado" id="lista">
+            <thead>
+                <tr>
+                    <th >Productos</th>
+                    <th >Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Burger Samash Carne</td>
+                    <td> <button class="btn mas" id="mas-9-7.5">+</button> <span id="9">0</span> <button class="btn menos" id="menos-9-7.5">-</button></td>
+                </tr>
+                <tr>
+                    <td>Burger Pollo Crispy</td>
+                    <td> <button class="btn mas" id="mas-10-6-6">+</button> <span id="10">0</span> <button class="btn menos" id="menos-10-6-6">-</button></td>
+                </tr>
+                <tr>
+                    <td>Burger de Costilla</td>
+                    <td><button class="btn mas" id="mas-11-6">+</button> <span id="11">0</span> <button class="btn menos" id="menos-11-6">-</button></td>
+                </tr>
+                <tr>
+                    <td>Burger Cesar </td>
+                    <td> <button class="btn mas" id="mas-12-8.8">+</button> <span id="12">0</span> <button class="btn menos" id="menos-12-8.8">-</button></td>
+                </tr>
+                <tr>
+                    <td>Burger Ribs </td>
+                    <td> <button class="btn mas" id="mas-13-9.5">+</button> <span id="13">0</span> <button class="btn menos" id="menos-13-9.5">-</button></td>
+                </tr>
+                <tr>
+                    <td>Vaso de Nestea </td>
+                    <td> <button class="btn mas" id="mas-1-2.2">+</button> <span id="1">0</span> <button class="btn menos" id="menos-1-2.2">-</button></td>
+                </tr>
+                <tr>
+                    <td>Huevo</td>
+                    <td> <button class="btn mas" id="mas-2-1">+</button> <span id="2">0</span> <button class="btn menos" id="menos-2-1">-</button></td>
+                </tr>
+                <tr>
+                    <td>Pepinillos</td>
+                    <td> <button class="btn mas" id="mas-3-1">+</button> <span id="3">0</span> <button class="btn menos" id="menos-3-1">-</button></td>
+                </tr>
+                <tr>
+                    <td>Tocineta</td>
+                    <td> <button class="btn mas" id="mas-4-1.5">+</button> <span id="4">0</span> <button class="btn menos" id="menos-4-1.5">-</button></td>
+                </tr>
+                <tr>
+                    <td>Queso Cheddar</td>
+                    <td> <button class="btn mas" id="mas-5-1.2">+</button> <span id="5">0</span> <button class="btn menos" id="menos-5-1.2">-</button></td>
+                </tr>
+                <tr>
+                    <td>Queso Guayanes</td>
+                    <td> <button class="btn mas" id="mas-6-1.4">+</button> <span id="6">0</span> <button class="btn menos" id="menos-6-1.4">-</button></td>
+                </tr>
+                <tr>
+                    <td>Queso Empanizado </td>
+                    <td><button class="btn mas" id="mas-7-1.5">+</button> <span id="7">0</span> <button class="btn menos" id="menos-7-1.5">-</button></td>
+                </tr>
+                <tr>
+                    <td>Cebolla Caramelizada</td>
+                    <td> <button class="btn mas" id="mas-8-1">+</button> <span id="8">0</span> <button class="btn menos" id="menos-8-1">-</button></td>
+                </tr>
+                <tr>
+                    <td>Papas Cheese</td>
+                    <td> <button class="btn mas" id="mas-14-6.5">+</button> <span id="14">0</span> <button class="btn menos" id="menos-14-6.5">-</button></td>
+                </tr>
+                <tr>
+                    <td>Canasta de Pollo </td>
+                    <td> <button class="btn mas" id="mas-15-7.2">+</button> <span id="15">0</span> <button class="btn menos" id="menos-15-7.2">-</button></td>
+                </tr>
+                <tr>
+                    <td>Papas Fritas</td>
+                    <td> <button class="btn mas" id="mas-16-2">+</button> <span id="16">0</span> <button class="btn menos" id="menos-16-2">-</button></td>
+                </tr>
+                <tr>
+                    <td>Tequeños</td>
+                    <td> <button class="btn mas" id="mas-17-4.5">+</button> <span id="17">0</span> <button class="btn menos" id="menos-17-4.5">-</button></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+
+    <script>
+
+        let getId = (e) =>{
+            let clave = e.split("-")
+            return clave
+        }
+        let sumaItems = (id)=>{
+            let idNumberMas = document.getElementById(id).innerText
+            return Number(idNumberMas) +1
+        }
+        let restaItems = (id)=>{
+            let idNumberMenos = document.getElementById(id).innerText
+            return Number(idNumberMenos) -1
+        }
+        let total =(accion, precio) =>{
+            let montoApagar = document.getElementById("apagar").innerText
+            let tasa = 24.58
+            if (accion === "mas") {
+                document.getElementById("bolivares").innerText = ((Number(montoApagar)+ Number(precio)).toFixed(2)* tasa).toFixed(2)
+                return( Number(montoApagar)+ Number(precio)).toFixed(2)
+            }
+            if (accion === "menos") {
+                document.getElementById("bolivares").innerText = ((Number(montoApagar)- Number(precio)).toFixed(2)* tasa).toFixed(2)
+                return (Number(montoApagar)- Number(precio)).toFixed(2)
+            }
+
+        }
+        let lista = document.getElementById("lista")
+        lista.addEventListener("click", (e)=>{
+            let   [accion, id, precio]  = getId(e.target.id)
+            if (accion === "mas") {
+                document.getElementById(id).innerText = sumaItems(id)
+                document.getElementById("apagar").innerText=total(accion,precio)
+                e.target.parentNode.parentNode.classList.add("amarillo")
+            } 
+            if (accion === "menos") {
+                if (restaItems(id) >= 0) {
+                    document.getElementById(id).innerText = restaItems(id)
+                    document.getElementById("apagar").innerText=total(accion,precio)
+                    if (restaItems(id) < 0) {
+                        document.getElementById(id).parentNode.parentNode.classList.remove("amarillo")
+                    }
+                }
+            } 
+            e.stopPropagation()
+        })
+        document.getElementById("limpiar").addEventListener("click", ()=>{
+            document.getElementById("apagar").innerText =(0.00).toFixed(2)
+            document.getElementById("bolivares").innerText =(0.00).toFixed(2)
+            for (let index = 0; index < 17; index++) {
+                document.getElementById(index+1).innerText = 0.00
+                document.getElementById(index+1).parentNode.parentNode.classList.remove("amarillo")
+            }
+        })
+    </script>
+</body>
+</html>
